@@ -182,9 +182,12 @@ Após fazer a configuração, o Rancher irá exibir um comando de docker run, pa
 
 Adicionar o host B e host C. 
 
-Pegar o seu comando no seu rancher, na tela de criação de cluster. Alterar o node-name para cada um dos nodes participantes
+Pegar o seu comando no seu rancher, na tela de criação de cluster. 
 ```sh
-$ docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run rancher/rancher-agent:latest --server https://rancher.dev-ops-ninja.com --token 8xf5r2ttrvvqcxdhwsbx9cvb7s9wgwdmgfbmzr4mt7smjbg4jgj292 --ca-checksum 61ac25d1c389b26c5c9acd98a1c167dbfb394c6c1c3019d855901704d8bae282 --node-name k8s-1 --etcd --controlplane --worker
+
+$ sudo docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run  rancher/rancher-agent:v2.6.3 --server https://rancher.devops.moibueno --token 9p872c7z4p4fd8gbkpk8hkwjvjmq2svgns7cc5s8m82f55m8ckdgjn --ca-checksum 25f77db9184678bf6c00b6608ebdb21f90823a505665b1313d8649a48e45c740 --etcd --controlplane --worker
+
+	
 ```
 Será um cluster com 3 nós.
 Navegar pelo Rancher e ver os painéis e funcionalidades.
