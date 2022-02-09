@@ -23,14 +23,11 @@ $ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-1         - HOST B
 $ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-2         - HOST C
 $ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-3         - HOST D
 
-$ sudo su
-$ curl https://releases.rancher.com/install-docker/20.10.sh | sh
-$ usermod -aG docker moibueno
+$ sudo curl https://releases.rancher.com/install-docker/20.10.sh | sh
+$ sudo usermod -aG docker moibueno
+
+
 ```
-
-
-
-
 
 # Aula 5 - Construindo sua aplicação
 
@@ -45,7 +42,7 @@ Entrar no host A, e instalar os pacotes abaixo, que incluem Git, Python, Pip e o
 
 $ sudo su
 $ apt-get install git -y
-$ curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+$ curl -L "https://github.com/docker/compose/releases/download/2.2.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 $ chmod +x /usr/local/bin/docker-compose
 $ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
@@ -153,7 +150,7 @@ Nesse exercício iremos instalar o Rancher 2.2.5 versão single node. Isso signi
 Entrar no host A, que será usado para hospedar o Rancher Server. Iremos verficar se não tem nenhum container rodando ou parado, e depois iremos instalar o Rancher.
 ```sh
 $ docker ps -a
-$ docker run -d --name rancher --restart=unless-stopped -v /opt/rancher:/var/lib/rancher  -p 80:80 -p 443:443 rancher/rancher:v2.4.3
+$ docker run -d --name rancher --restart=unless-stopped -v /opt/rancher:/var/lib/rancher  -p 80:80 -p 443:443 --privileged rancher/rancher:latest
 ```
 Com o Rancher já rodando, irei adicionar a entrada de cada DNS para o IP de cada máquina.
 
@@ -185,9 +182,9 @@ Após fazer a configuração, o Rancher irá exibir um comando de docker run, pa
 
 Adicionar o host B e host C. 
 
-Pegar o seu comando no seu rancher.
+Pegar o seu comando no seu rancher, na tela de criação de cluster. Alterar o node-name para cada um dos nodes participantes
 ```sh
-$ docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run rancher/rancher-agent:v2.4.3 --server https://rancher.dev-ops-ninja.com --token 8xf5r2ttrvvqcxdhwsbx9cvb7s9wgwdmgfbmzr4mt7smjbg4jgj292 --ca-checksum 61ac25d1c389b26c5c9acd98a1c167dbfb394c6c1c3019d855901704d8bae282 --node-name k8s-1 --etcd --controlplane --worker
+$ docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run rancher/rancher-agent:latest --server https://rancher.dev-ops-ninja.com --token 8xf5r2ttrvvqcxdhwsbx9cvb7s9wgwdmgfbmzr4mt7smjbg4jgj292 --ca-checksum 61ac25d1c389b26c5c9acd98a1c167dbfb394c6c1c3019d855901704d8bae282 --node-name k8s-1 --etcd --controlplane --worker
 ```
 Será um cluster com 3 nós.
 Navegar pelo Rancher e ver os painéis e funcionalidades.
