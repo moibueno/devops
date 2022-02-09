@@ -3,7 +3,7 @@
 
 - 4 máquinas virtuais com 2/4 processadores e 6/8 gb de memória ram
 - 1 domínio
-- Sistema operacional Ubuntu 16.04 LTS
+- Sistema operacional Ubuntu 18.04 LTS
 
 - Domínio usado pelo instrutor do curso é: dev-ops-ninja.com
 
@@ -24,8 +24,8 @@ $ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-2         - HOST C
 $ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-3         - HOST D
 
 $ sudo su
-$ curl https://releases.rancher.com/install-docker/19.03.sh | sh
-$ usermod -aG docker ubuntu
+$ curl https://releases.rancher.com/install-docker/20.10.sh | sh
+$ usermod -aG docker moibueno
 ```
 
 
