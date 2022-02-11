@@ -269,7 +269,7 @@ Fazer o deployment do Longhorn.
 ```sh
 $ kubectl apply -f mariadb-longhorn-volume.yml
 $ POD=`kubectl get pods -l app=mysql | grep Running | grep 1/1 | awk '{print $1}'`
-$ kubectl exec -it $POD -- mysql -uroot -ppassword
+$ kubectl exec -it $POD -- mysql -uroot -prancher
 	
 ```
 
