@@ -267,6 +267,12 @@ Fazer o deployment do Longhorn.
 
 
 ```sh
+$ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+$ sudo install minikube-linux-amd64 /usr/local/bin/minikube
+$ minikube start
+$ minikube addons enable ingress
+$ kubectl get svc --namespace ingress-nginx
+	
 $ kubectl apply -f mariadb-longhorn-volume.yml
 $ kubectl describe deployment mysql -n default
 $ kubectl get endpoints
