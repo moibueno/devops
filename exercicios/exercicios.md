@@ -3,11 +3,13 @@
 
 - 4 máquinas virtuais com 2/4 processadores e 6/8 gb de memória ram
 - 1 domínio
-- Sistema operacional Ubuntu 18.04 LTS
+
+Operating Systems and Container Runtime Requirements
+https://rancher.com/docs/rancher/v2.6/en/installation/requirements/
 
 - Domínio usado pelo instrutor do curso é: dev-ops-ninja.com
 
-https://github.com/jonathanbaraldi/devops
+https://github.com/moibueno/devops
 
 
 # Aula 4 - Ambiente
@@ -49,7 +51,8 @@ $ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 Com os pacotes instalados, agora iremos baixar o código fonte e começaremos a fazer os build's e rodar os containers.
 ```sh
 $ cd /home/ubuntu
-$ git clone https://github.com/jonathanbaraldi/devops
+$ git clone https://github.com/moibueno/devops
+$ #git clone https://github.com/jonathanbaraldi/devops
 $ cd devops/exercicios/app
 ```
 
