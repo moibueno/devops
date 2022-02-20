@@ -153,21 +153,13 @@ Nesse exercício iremos instalar o Rancher 2.6 versão single node. Isso signifi
 Entrar no host A, que será usado para hospedar o Rancher Server. Iremos verficar se não tem nenhum container rodando ou parado, e depois iremos instalar o Rancher.
 ```sh
 $ docker ps -a
-$ docker run -d --name rancher --restart=unless-stopped -v /opt/rancher:/var/lib/rancher  -p 80:80 -p 443:443 --privileged rancher/rancher:latest --server-arg '--no-deploy servicelb'
+$ docker run -d --name rancher --restart=unless-stopped -v /opt/rancher:/var/lib/rancher  -p 80:80 -p 443:443 --privileged rancher/rancher:latest 
 ```
 Com o Rancher já rodando, irei adicionar a entrada de cada DNS para o IP de cada máquina.
 
 ```sh
 $ rancher.<dominio> = IP do host A
 ```
-
-
-
-
-
-
-
-
 
 
 
@@ -225,6 +217,8 @@ Com o kubectl instalado, pegar as credenciais de acesso no Rancher e configurar 
 ```sh
 $ vi ~/.kube/config
 $ kubectl get nodes
+
+	
 ```
 
 
