@@ -43,12 +43,20 @@ Nesse exercício iremos construir as imagens dos containers que iremos usar, col
 Sempre que aparecer <dockerhub-user>, você precisa substituir pelo seu usuário no DockerHub.
 
 Entrar no host A, e instalar os pacotes abaixo, que incluem Git, Python, Pip e o Docker-compose.
-```sh
 
+```sh
 $ sudo su
+```
+```sh
 $ apt-get install git -y
+```
+```sh
 $ curl -L "https://github.com/docker/compose/releases/download/2.2.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+```sh
 $ chmod +x /usr/local/bin/docker-compose
+```
+```sh
 $ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 Com os pacotes instalados, agora iremos baixar o código fonte e começaremos a fazer os build's e rodar os containers.
