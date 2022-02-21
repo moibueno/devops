@@ -183,10 +183,6 @@ $ rancher.<dominio> = IP do host A
 ```
 
 
-
-
-
-
 # Aula 7 - Kubernetes
 
 ### Criar cluster Kubernetes
@@ -200,10 +196,7 @@ Adicionar o host B e host C.
 
 Pegar o seu comando no seu rancher, na tela de criação de cluster. 
 ```sh
-
-$ sudo docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run  rancher/rancher-agent:v2.6.3 --server https://rancher.devops.moibueno --token 9p872c7z4p4fd8gbkpk8hkwjvjmq2svgns7cc5s8m82f55m8ckdgjn --ca-checksum 25f77db9184678bf6c00b6608ebdb21f90823a505665b1313d8649a48e45c740 --etcd --controlplane --worker
-
-	
+sudo docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run  rancher/rancher-agent:v2.6.3 --server https://rancher.devops.moibueno --token 9p872c7z4p4fd8gbkpk8hkwjvjmq2svgns7cc5s8m82f55m8ckdgjn --ca-checksum 25f77db9184678bf6c00b6608ebdb21f90823a505665b1313d8649a48e45c740 --etcd --controlplane --worker
 ```
 Será um cluster com 3 nós.
 Navegar pelo Rancher e ver os painéis e funcionalidades.
