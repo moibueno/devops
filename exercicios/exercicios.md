@@ -24,10 +24,14 @@ $ ssh -i devops-ninja.pem ubuntu@<ip>  - RancherSerber - HOST A
 $ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-1         - HOST B
 $ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-2         - HOST C
 $ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-3         - HOST D
+```
 
+```sh
 $ sudo curl https://releases.rancher.com/install-docker/20.10.sh | sh; sudo usermod -aG docker moibueno
-$ sudo apt update; sudo apt upgrade -y
+```
 
+```sh
+$ sudo apt update; sudo apt upgrade -y
 ```
 
 # Aula 5 - Construindo sua aplicação
