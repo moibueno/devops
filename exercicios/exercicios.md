@@ -106,11 +106,11 @@ cd ../nginx
 ```sh
 docker build -t moibueno/nginx:devops .
 ```
-```sh
+
 Criando o container do nginx a partir da imagem e fazendo a ligação com o container do Node
-```
+
 ```sh
-docker run -d --name nginx -p 80:80 --link node <dockerhub-user>/nginx:devops
+docker run -d --name nginx -p 80:80 --link node moibueno/nginx:devops
 ```
 ```sh
 docker ps
