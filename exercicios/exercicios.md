@@ -101,14 +101,21 @@ Com isso temos nossa aplicação rodando, e conectada no Redis. A api para verif
 #### Container=NGINX
 Iremos fazer o build do container do nginx, que será nosso balanceador de carga.
 ```sh
-$ cd ../nginx
-$ docker build -t <dockerhub-user>/nginx:devops .
+cd ../nginx
 ```
-Criando o container do nginx a partir da imagem e fazendo a ligação com o container do Node
 ```sh
-$ docker run -d --name nginx -p 80:80 --link node <dockerhub-user>/nginx:devops
-$ docker ps
+docker build -t moibueno/nginx:devops .
 ```
+```sh
+Criando o container do nginx a partir da imagem e fazendo a ligação com o container do Node
+```
+```sh
+docker run -d --name nginx -p 80:80 --link node <dockerhub-user>/nginx:devops
+```
+```sh
+docker ps
+```
+```sh
 Podemos acessar então nossa aplicação nas portas 80 e 8080 no ip da nossa instância.
 
 Iremos acessar a api em /redis para nos certificar que está tudo ok, e depois iremos limpar todos os containers e volumes.
