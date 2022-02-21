@@ -45,21 +45,22 @@ Sempre que aparecer <dockerhub-user>, você precisa substituir pelo seu usuário
 Entrar no host A, e instalar os pacotes abaixo, que incluem Git, Python, Pip e o Docker-compose.
 
 ```sh
-$ sudo su
+sudo su
 ```
 ```sh
-$ apt-get install git -y
+apt-get install git -y
 ```
 ```sh
-$ curl -L "https://github.com/docker/compose/releases/download/2.2.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+curl -L "https://github.com/docker/compose/releases/download/2.2.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
 ```sh
-$ chmod +x /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
 ```
 ```sh
-$ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
-Com os pacotes instalados, agora iremos baixar o código fonte e começaremos a fazer os build's e rodar os containers.
+
+	Com os pacotes instalados, agora iremos baixar o código fonte e começaremos a fazer os build's e rodar os containers.
 ```sh
 $ cd /home/ubuntu
 $ git clone https://github.com/moibueno/devops
