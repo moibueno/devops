@@ -12,19 +12,11 @@ https://rancher.com/docs/rancher/v2.6/en/installation/requirements/
 https://github.com/moibueno/devops
 
 
-# Aula 4 - Ambiente
+# Aula 4 - Ambiente (Install docker)
 	
 	Nesta aula, iremos verificar a instalação do Docker, e também iremos revisar a arquitetura do ambiente.
 
 	É preciso entrar em todas as máquinas e instalar o Docker.
-
-```sh
-
-$ ssh -i devops-ninja.pem ubuntu@<ip>  - RancherSerber - HOST A
-$ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-1         - HOST B
-$ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-2         - HOST C
-$ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-3         - HOST D
-```
 
 ```sh
 sudo curl https://releases.rancher.com/install-docker/20.10.sh | sh; sudo usermod -aG docker moibueno; sudo apt update; sudo apt upgrade -y
