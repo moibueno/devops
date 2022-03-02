@@ -207,11 +207,7 @@ Navegar pelo Rancher e ver os painéis e funcionalidades.
 Agora iremos instalar o kubectl, que é a CLI do kubernetes. Através do kubectl é que iremos interagir com o cluster.
 ```sh
 
-sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-sudo apt-get update
-sudo apt-get install -y kubectl
+sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2 ; curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - ; echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list ; sudo apt-get update ; sudo apt-get install -y kubectl
 ```
 
 Com o kubectl instalado, pegar as credenciais de acesso no Rancher e configurar o kubectl.
