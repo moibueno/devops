@@ -14,9 +14,9 @@ https://github.com/moibueno/devops
 
 # Aula 4 - Ambiente (Install docker)
 	
-	Nesta aula, iremos verificar a instalação do Docker, e também iremos revisar a arquitetura do ambiente.
+Nesta aula, iremos verificar a instalação do Docker, e também iremos revisar a arquitetura do ambiente.
 
-	É preciso entrar em todas as máquinas e instalar o Docker.
+É preciso entrar em todas as máquinas e instalar o Docker.
 
 ```sh
 sudo curl https://releases.rancher.com/install-docker/20.10.sh | sh; sudo usermod -aG docker moibueno; sudo apt update; sudo apt upgrade -y
